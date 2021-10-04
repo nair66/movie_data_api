@@ -1,0 +1,23 @@
+{
+  "name": "server_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon -L -r dotenv/config ./src/index.js dotenv_config_path=./config/.env",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aditya_nair",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.13.1",
+    "nodemon": "^2.0.13"
+  }
+}
