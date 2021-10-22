@@ -1,14 +1,14 @@
+const { logger } = require('../Logger/logger');
 const mongoose = require('mongoose');
 
 mongoose
-  .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster1.u1to9.mongodb.net/movie?retryWrites=true&w=majority`
-  )
+  .connect(process.env.DB_URL)
   .then(() => {
     console.log('Successfully connected to DB');
   })
   .catch((err) => {
-    console.log('Unable to connect to DB', err.message);
+    logger.log({ level: 'error', message: `Unable to connect to DB ${err.message}` });
+    process.exit();
   });
 
 module.exports = mongoose;

@@ -1,12 +1,19 @@
 const mongoose = require('mongoose');
 
-const moviedataSchema = new mongoose.Schema({
+const movieImageSchema = new mongoose.Schema({
   name: String,
-  img: String,
+  encoding: String,
+  mimetype: String,
+  buffer: 'Buffer',
+});
+
+const movieDataSchema = new mongoose.Schema({
+  name: String,
+  img: movieImageSchema,
   summary: String,
 });
 
-const movie = mongoose.model('movies', moviedataSchema);
+const movie = mongoose.model('movieData', movieDataSchema);
 
 module.exports = {
   movie,
